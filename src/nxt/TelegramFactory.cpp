@@ -16,7 +16,7 @@ namespace nxt
 	
 	Telegram TelegramFactory::startProgramMsg(const std::string &p_file) const
 	{
-		if(p_file.length() > NXT_MAX_FILE_NAME_LENGTH)
+		if(p_file.length() + 1 > NXT_MAX_FILE_NAME_LENGTH)
 			throw NXTException("Cannot start program on NXT. Filename too long");
 
 		Telegram telegram(2 + p_file.length());
@@ -149,16 +149,18 @@ namespace nxt
 	}
 	
 	Telegram TelegramFactory::messageWriteMsg(const uint8_t p_mailbox,
-											  const uint8_t p_messageSize,
-											  const unsigned char *p_message) const
+											  const std::string& p_message) const
 	{
-		Telegram telegram(4 + p_messageSize);
+		if(p_message.length() + 1 > NXT_MAX_MESSAGE_LENGTH)
+			throw NXTException("Cannot write message. Message is too long");
+			
+		Telegram telegram(4 + p_message.length() + 1);
 		
 		telegram.add(DIRECT_CMD_NO_REPLY);
 		telegram.add(CMD_MESSAGE_WRITE);
 		telegram.addUINT8(p_mailbox);
-		telegram.addUINT8(p_messageSize);
-		telegram.addData(p_message, p_messageSize);
+		telegram.addUINT8(p_message.length() + 1);
+		addString(telegram, p_message);
 		
 		return telegram;
 	}
@@ -273,13 +275,9 @@ namespace nxt
 	
 	void TelegramFactory::addString(Telegram &p_telegram, const std::string &p_string) const
 	{
-		if(isLittleEndian()) {
-			for(int i = 0; i < p_string.length(); ++i)
-				p_telegram.add((unsigned char) p_string[i]);
-		} else {
-			for(int i = p_string.length() - 1; i >= 0; --i)
-				p_telegram.add((unsigned char) p_string[i]);
-		}
+		for(int i = 0; i < p_string.length(); ++i)
+			p_telegram.add((unsigned char) p_string[i]);
+		p_telegram.add(0x00);
 	}
 	
 	void TelegramFactory::addUINT16(Telegram &p_telegram, const uint16_t p_value) const

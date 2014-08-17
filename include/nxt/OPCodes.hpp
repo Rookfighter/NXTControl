@@ -8,6 +8,7 @@
 #define USB_IN_ENDPOINT 0x82
 
 #define NXT_MAX_FILE_NAME_LENGTH 20
+#define NXT_MAX_MESSAGE_LENGTH 59
 
 /* Motor Ports */
 #define PORT_A 0x00

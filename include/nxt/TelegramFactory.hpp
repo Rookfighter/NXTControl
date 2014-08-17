@@ -36,8 +36,7 @@ namespace nxt
 		Telegram resetInputScaledValueMsg(const uint8_t p_port) const;
 		Telegram getInputValuesMsg(const uint8_t p_port) const;
 		Telegram messageWriteMsg(const uint8_t p_mailbox,
-								 const uint8_t p_messageSize,
-								 const unsigned char *p_message) const;
+								 const std::string& p_message) const;
 		Telegram resetMotorPositionMsg(const uint8_t p_port,
 									   const uint8_t p_relative) const;
 		Telegram getBatteryLevelMsg() const;
