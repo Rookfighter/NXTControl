@@ -19,7 +19,7 @@ namespace nxt
 		if(p_file.length() + 1 > NXT_MAX_FILE_NAME_LENGTH)
 			throw NXTException("Cannot start program on NXT. Filename too long");
 
-		Telegram telegram(2 + p_file.length());
+		Telegram telegram(2 + p_file.length() + 1);
 		
 		telegram.add(DIRECT_CMD_NO_REPLY);
 		telegram.add(CMD_START_PROGRAM);
@@ -42,10 +42,10 @@ namespace nxt
 	Telegram TelegramFactory::playSoundFileMsg(const uint8_t p_loop,
 											   const std::string &p_file) const
 	{
-		if(p_file.length() > NXT_MAX_FILE_NAME_LENGTH)
-			throw NXTException("Cannot start program on NXT. Filename too long");
+		if(p_file.length() + 1 > NXT_MAX_FILE_NAME_LENGTH)
+			throw NXTException("Cannot play sound file on NXT. Filename too long");
 			
-		Telegram telegram(3 + p_file.length());
+		Telegram telegram(3 + p_file.length() + 1);
 		
 		telegram.add(DIRECT_CMD_NO_REPLY);
 		telegram.add(CMD_PLAY_SOUND_FILE);
@@ -168,7 +168,6 @@ namespace nxt
 	Telegram TelegramFactory::resetMotorPositionMsg(const uint8_t p_port,
 													const uint8_t p_relative) const
 	{
-	   
 		Telegram telegram(4);
 		
 		telegram.add(DIRECT_CMD_NO_REPLY);
