@@ -170,7 +170,5 @@ namespace nxt
 		send(telegramFactory.messageReadMsg(p_remoteMailbox, p_localMailbox, p_removeMessage));
 		return telegramDecoder.decodeMessageReadMsg(receive());
 	}
-
-
 }
 
