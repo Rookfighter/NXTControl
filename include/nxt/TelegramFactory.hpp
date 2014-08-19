@@ -6,6 +6,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Provides methods to create Telegram objects.
+	 */
 	class TelegramFactory
 	{
 	private:

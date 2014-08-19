@@ -6,7 +6,9 @@
 
 namespace nxt
 {
-
+	/**
+	 * \brief Used to communicate with the LEGO NXT Brick via USB.
+	 */
 	class USBSocket
 	{
 	private:

@@ -6,6 +6,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Data structure for ReadMailbox responses.
+	 */
 	class MailboxMessage
 	{
 	public:

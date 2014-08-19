@@ -5,6 +5,9 @@
 
 namespace nxt
 {	
+	/**
+	 * \brief Standard exception in NXTControl.
+	 */
 	class NXTException: public std::logic_error
 	{
 	public:
@@ -12,6 +15,9 @@ namespace nxt
 		NXTException(const char* p_what) throw();
 	};
 	
+	/**
+	 * \brief Exception for USB related problems.
+	 */
 	class USBException: public NXTException
 	{
 	public:
@@ -19,6 +25,9 @@ namespace nxt
 		USBException(const char* p_what) throw();
 	};
 	
+	/**
+	 * \brief Exception for Timeouts.
+	 */
 	class TimeoutException: public NXTException
 	{
 	public:

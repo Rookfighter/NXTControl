@@ -5,6 +5,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Data structure for sensor measurements.
+	 */
 	class SensorInfo
 	{
 	public:
@@ -17,6 +20,9 @@ namespace nxt
 		~SensorInfo() { }
 	};
 	
+	/**
+	 * \brief Data structure for the current sensor state.
+	 */
 	class InputValues
 	{
 	public:

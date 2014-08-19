@@ -5,7 +5,9 @@
 
 namespace nxt
 {
-
+	/**
+	* \brief Controls a motor of the brick.
+	*/
 	class Motor
 	{
 	private:

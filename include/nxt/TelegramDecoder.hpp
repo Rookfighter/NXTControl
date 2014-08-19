@@ -13,6 +13,10 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Provides functionality to create handy data structures from Telegram
+	 * 		  objects.
+	 */
 	class TelegramDecoder
 	{
 	private:

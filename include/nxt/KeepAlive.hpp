@@ -5,6 +5,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Data structure for keep alive responses.
+	 */
 	class KeepAlive
 	{
 	public:

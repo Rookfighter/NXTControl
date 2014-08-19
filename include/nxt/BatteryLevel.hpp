@@ -3,6 +3,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Data structure for GetBatteryLevel responses.
+	 */
 	class BatteryLevel
 	{
 	public:

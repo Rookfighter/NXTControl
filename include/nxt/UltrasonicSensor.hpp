@@ -6,6 +6,9 @@
 
 namespace nxt
 {
+	/**
+	* \brief Controls a ultrasonic sensor of the brick.
+	*/
 	class UltrasonicSensor
 	{
 	private:

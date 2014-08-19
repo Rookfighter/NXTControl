@@ -5,6 +5,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Data structure for tacho data that contains motor tick counts.
+	 */
 	class TachoInfo
 	{
 	public:
@@ -17,6 +20,9 @@ namespace nxt
 		~TachoInfo() { }
 	};
 	
+	/**
+	 * \brief Data structure for the current state of a motor.
+	 */
 	class OutputState
 	{
 	public:

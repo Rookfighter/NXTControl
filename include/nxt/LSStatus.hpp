@@ -5,6 +5,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Data structure for LSGetStatus responses.
+	 */
 	class LSStatus
 	{
 	public:

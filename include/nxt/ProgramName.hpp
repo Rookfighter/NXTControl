@@ -6,6 +6,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Data structure for GetCurrentProgramName responses.
+	 */
 	class ProgramName
 	{
 	public:

@@ -3,6 +3,9 @@
 
 namespace nxt
 {
+	/**
+	 * \brief Data structure for LSRead responses.
+	 */
 	class LSRead
 	{
 	public:
