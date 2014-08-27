@@ -1,6 +1,8 @@
 #ifndef NXT_BATTERY_LEVEL_HPP
 #define NXT_BATTERY_LEVEL_HPP
 
+#include <cstdint>
+
 namespace nxt
 {
 	/**
