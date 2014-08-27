@@ -60,7 +60,7 @@ namespace nxt
 	void USBSocket::send(const Telegram& p_telegram, unsigned char p_endpoint)
 	{
 		unsigned char data_array[p_telegram.size()];
-        int transferredBytes, ret, sum = 0;
+        int transferredBytes, ret;
         p_telegram.getData(data_array);
         
         //transfer data in telegram, the endpoint gives the transfer direction

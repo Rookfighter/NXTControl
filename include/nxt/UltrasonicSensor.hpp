@@ -14,11 +14,15 @@ namespace nxt
 	private:
 		Brick &brick;
 		uint8_t port;
+		
+		void requestMeasurement();
+		void waitForReceive();
+		void measurementTimedOut();
 	public:
 		UltrasonicSensor(Brick &p_brick, const uint8_t p_port);
 		~UltrasonicSensor();
 		
-		uint16_t getDistance();
+		uint8_t getDistance();
 	};
 
 }

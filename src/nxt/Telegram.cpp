@@ -17,7 +17,7 @@ namespace nxt
 	Telegram::Telegram(const int p_size)
 	:data(p_size)
 	{
-		
+		data.clear();
 	}
 	
 	Telegram::~Telegram()

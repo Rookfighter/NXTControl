@@ -18,11 +18,15 @@ namespace nxt
 	
 	void Brick::send(const Telegram &p_telegram)
 	{
+		if(!connected)
+			throw NXTException("Cannot send Telegram. Brick is not connected");
 		socket.send(p_telegram, NXT_USB_OUT_ENDPOINT);
 	}
 	
 	Telegram Brick::receive()
 	{
+		if(!connected)
+			throw NXTException("Cannot receive Telegram. Brick is not connected");
 		return socket.receive(NXT_USB_IN_ENDPOINT);
 	}
 	
