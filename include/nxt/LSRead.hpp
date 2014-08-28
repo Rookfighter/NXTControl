@@ -1,6 +1,8 @@
 #ifndef NXT_LS_READ_HPP
 #define NXT_LS_READ_HPP
 
+#include <cstdint>
+
 namespace nxt
 {
 	/**
