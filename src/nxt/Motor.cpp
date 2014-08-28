@@ -4,7 +4,7 @@
 namespace nxt
 {
 
-	Motor::Motor(Brick &p_brick, const uint8_t p_port)
+	Motor::Motor(Brick *p_brick, const uint8_t p_port)
 	:brick(p_brick), port(p_port)
 	{
 	}
@@ -15,7 +15,7 @@ namespace nxt
 	
 	void Motor::setPower(const uint8_t p_power)
 	{
-		brick.setOutputState(port,
+		brick->setOutputState(port,
 							 p_power,
 							 MOTOR_MODE_ON_BRAKE,
 							 REGULATION_MODE_NONE,
@@ -32,12 +32,12 @@ namespace nxt
 	void Motor::resetMotorPosition()
 	{
 		// reset motor with relative position
-		brick.resetMotorPosition(port, 0x01);
+		brick->resetMotorPosition(port, 0x01);
 	}
 	
 	TachoInfo Motor::getTachoInfo()
 	{
-		return brick.getOutputState(port).tachoInfo;
+		return brick->getOutputState(port).tachoInfo;
 	}
 
 

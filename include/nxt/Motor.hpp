@@ -11,10 +11,10 @@ namespace nxt
 	class Motor
 	{
 	private:
-		Brick &brick;
+		Brick *brick;
 		uint8_t port;
 	public:
-		Motor(Brick &p_brick, const uint8_t p_port);
+		Motor(Brick *p_brick, const uint8_t p_port);
 		~Motor();
 		
 		void setPower(const uint8_t p_power);

@@ -12,16 +12,16 @@ namespace nxt
 	class UltrasonicSensor
 	{
 	private:
-		Brick &brick;
+		Brick *brick;
 		uint8_t port;
 		
 		void requestMeasurement();
 		void waitForReceive();
 		void measurementTimedOut();
 	public:
-		UltrasonicSensor(Brick &p_brick, const uint8_t p_port);
+		UltrasonicSensor(Brick *p_brick, const uint8_t p_port);
 		~UltrasonicSensor();
-		
+        
 		uint8_t getDistance();
 	};
 
